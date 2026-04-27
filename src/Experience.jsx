@@ -66,8 +66,8 @@ const BubbleMaterial = {
 
 const CokeCan = ({ scrollProgress }) => {
   const canRef = useRef();
-  const labelTexture = useLoader(THREE.TextureLoader, '/mojo-label.png');
-  const dropsTexture = useLoader(THREE.TextureLoader, '/water-drops.png');
+  const labelTexture = useLoader(THREE.TextureLoader, 'mojo-label.png');
+  const dropsTexture = useLoader(THREE.TextureLoader, 'water-drops.png');
 
   labelTexture.anisotropy = 16;
   dropsTexture.wrapS = dropsTexture.wrapT = THREE.RepeatWrapping;
