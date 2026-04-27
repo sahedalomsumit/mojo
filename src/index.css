@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Teko:wght@300;400;700;900&family=The+Girl+Next+Door&display=swap');
+
+:root {
+  --mojo-red: #cc0000;
+  --mojo-red-dark: #800000;
+  --mojo-white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--mojo-red);
+  color: white;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Giant Background Text from Reference */
+.bg-mojo-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Teko', sans-serif;
+  font-size: 50vw;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.1);
+  z-index: -1;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.bg-pattern-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/bg-pattern.png');
+  background-size: 400px;
+  opacity: 0.15;
+  z-index: -2;
+}
+
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+section.story-section {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding: 0 10vw;
+  position: relative;
+  z-index: 2;
+}
+
+.content-box {
+  max-width: 600px;
+  width: 100%;
+}
+
+.content-box.left { margin-right: auto; text-align: left; }
+.content-box.right { margin-left: auto; text-align: right; }
+.content-box.center { margin: 0 auto; text-align: center; }
+
+/* Reference Typography */
+.hero-title {
+  font-family: 'Teko', sans-serif;
+  font-size: clamp(6rem, 18vw, 15rem);
+  font-weight: 900;
+  line-height: 0.8;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: var(--mojo-white);
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: var(--mojo-white);
+  color: var(--mojo-red);
+  display: inline-block;
+  padding: 0.2rem 1rem;
+}
+
+h2 {
+  font-family: 'Teko', sans-serif;
+  font-size: clamp(3rem, 10vw, 6rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.palestine-text {
+  text-align: left;
+  margin: 0;
+}
+
+.magic-title {
+  font-size: clamp(4rem, 15vw, 8rem);
+}
+
+.section-tag {
+  font-family: 'Teko', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+/* Premium Button */
+.btn-premium {
+  background: var(--mojo-white);
+  color: var(--mojo-red);
+  padding: 1.5rem 4rem;
+  border-radius: 0; /* Square/Sharp like branding */
+  border: none;
+  font-family: 'Teko', sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  font-weight: 900;
+}
+
+.btn-premium:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 0px var(--mojo-red-dark);
+}
+
+/* Nav */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 2rem;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Teko', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .bg-mojo-text {
+    font-size: 80vw;
+    opacity: 0.05;
+  }
+
+  nav {
+    padding: 1rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+  }
+
+  nav a {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  section.story-section {
+    padding: 0 5vw;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .content-box {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-box.left, 
+  .content-box.right {
+    margin: 0;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(4rem, 25vw, 8rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-badges {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .hero-badge {
+    width: 100%;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .hero-subtitle {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  .btn-premium {
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    width: 100%;
+  }
+
+  .palestine-text {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .magic-title {
+    font-size: clamp(3rem, 15vw, 5rem);
+    line-height: 1;
+  }
+
+  footer.main-footer {
+    padding: 4rem 1rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1.5rem !important;
+    align-items: center;
+  }
+}
+
+/* Footer */
+.main-footer {
+  padding: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  background: rgba(163, 12, 12, 0.50);
+  border-top: 5px solid var(--mojo-white);
+  position: relative;
+  z-index: 10;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+footer {
+  padding: 5rem 0;
+  background: var(--mojo-red-dark);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-top: 5px solid var(--mojo-white);
+}
+
+/* Hero Badges Reimagined (Screenshot Match) */
+.hero-badges {
+  animation: fadeIn 1s ease-out 0.5s both;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero-badge {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 2px solid #f42a41; /* Mojo Red */
+  padding: 0.4rem 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+.hero-badge:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.hero-badge span {
+  font-family: 'The Girl Next Door', cursive;
+  font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: 0px;
+  text-transform: none;
+}
+
+.bd-badge span {
+  color: #006a4e; /* BD Green */
+}
+
+.ps-badge span {
+  color: #000000;
+}
+
+.flag-icon {
+  width: 28px;
+  height: 18px;
+  border-radius: 0; /* Square like the screenshot's vibe */
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Bangladesh Flag */
+.bd-flag { background: #006a4e; }
+.bd-flag::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #f42a41;
+  border-radius: 50%;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+/* Palestine Flag */
+.ps-flag { display: flex; flex-direction: column; }
+.ps-black { height: 33.33%; background: #000; }
+.ps-white { height: 33.33%; background: #fff; }
+.ps-green { height: 33.33%; background: #00843d; }
+.ps-red {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: #ee2a35;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+/* Red Dot accent to match screenshot */
+.hero-badge::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: #f42a41;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: none; /* Only show if you want the exact dot from screenshot */
+}
+
+.bd-badge::after { display: block; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+@keyframes pulseHeart {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+/* Support Palestine Section */
+.support-palestine {
+  background: transparent;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.palestine-flag-strip {
+  display: flex;
+  height: 8px;
+  width: 200px;
+  margin: 0 auto 2rem;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.strip-black { flex: 1; background: #000; }
+.strip-white { flex: 1; background: #fff; }
+.strip-green { flex: 1; background: #00843d; }
+.strip-red { width: 40px; background: #ee2a35; }
+
+.palestine-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.palestine-kufiya-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.15;
+  z-index: -1;
+}
