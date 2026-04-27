@@ -18,6 +18,8 @@ import {
 } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
 import * as THREE from 'three';
+import labelImg from './assets/mojo-label.png';
+import dropsImg from './assets/water-drops.png';
 
 // Custom Shader for Realistic Bubbles (Redesigned for Storytelling)
 const BubbleMaterial = {
@@ -66,8 +68,8 @@ const BubbleMaterial = {
 
 const CokeCan = ({ scrollProgress }) => {
   const canRef = useRef();
-  const labelTexture = useLoader(THREE.TextureLoader, 'mojo-label.png');
-  const dropsTexture = useLoader(THREE.TextureLoader, 'water-drops.png');
+  const labelTexture = useLoader(THREE.TextureLoader, labelImg);
+  const dropsTexture = useLoader(THREE.TextureLoader, dropsImg);
 
   labelTexture.anisotropy = 16;
   dropsTexture.wrapS = dropsTexture.wrapT = THREE.RepeatWrapping;

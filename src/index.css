@@ -40,7 +40,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('/bg-pattern.png');
+  background-image: url('./assets/bg-pattern.png');
   background-size: 400px;
   opacity: 0.15;
   z-index: -2;
