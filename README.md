@@ -1,6 +1,6 @@
 # 🥤 MOJO - High-Voltage 3D Rickshaw Art Experience
 
-MOJO is a premium, high-performance 3D landing page celebrating Bangladesh's iconic cola brand. Built with modern web technologies, it fuses immersive 3D graphics with the vibrant soul of Rickshaw Art, featuring smooth scroll-driven animations and a powerful narrative of local pride and global solidarity.
+MOJO is a premium, high-performance 3D landing page celebrating Bangladesh's iconic cola brand. It fuses immersive 3D graphics with the vibrant soul of Rickshaw Art, featuring smooth scroll-driven animations and a powerful narrative of local pride and global solidarity.
 
 ![MOJO Preview](public/preview-mockup.png)
 
@@ -37,16 +37,19 @@ This project is more than just a landing page; it's a digital tribute to **Bangl
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/sahedalomsumit/lemillion.git
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Start the development server:
+
    ```bash
    npm run dev
    ```
@@ -63,4 +66,3 @@ This project is for demonstration and portfolio purposes. **MOJO** is a trademar
 ---
 
 Built with ⚡ and ❤️ by [Sumit](https://github.com/sahedalomsumit)
-
